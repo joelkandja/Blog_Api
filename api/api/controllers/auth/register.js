@@ -1,68 +1,45 @@
+// api/controllers/auth/signup.js
 module.exports = {
-  friendlyName: 'Register',
+  friendlyName: 'Signup',
 
-  description: 'Register auth.',
+  description: 'Sign up for a new account.',
 
   inputs: {
     email: {
-      required: true,
       type: 'string',
-      isEmail: true,
+      required: true,
+      isEmail: true
     },
-
     passwd: {
-      required: true,
       type: 'string',
-      maxLength: 200,
-    },
+      required: true
+    }
   },
 
   exits: {
-    // success: {
-    //   description: 'New user registered successfully.'
-    // },
-    // emailAlreadyInUse: {
-    //   statusCode: 409,
-    //   description: 'The provided email address is already in use.'
-    // },
-    // invalid: {
-    //   statusCode: 400,
-    //   description: 'The provided email address or password is invalid.'
-    // }
+    success: {
+      description: 'User successfully signed up.'
+    },
+    emailAlreadyInUse: {
+      statusCode: 409,
+      description: 'The provided email address is already in use.'
+    },
+    invalid: {
+      statusCode: 400,
+      description: 'The provided email address or password is invalid.'
+    }
   },
 
-  fn: async function (inputs, exits) {
+  fn: async function ({email, passwd}) {
 
-    sails.log('inputs', inputs);
-
-    return;
+    
     try {
-      var newEmail = email.toLowerCase();
-
       var newUserRecord = await User.create({
-        email: newEmail,
-        passwd: await sails.helpers.passwords.hashPassword(passwd),
-        tosAcceptedByIp: this.req.ip
+        email: email.toLowerCase(),
+        passwd: await sails.helpers.passwords.hashPassword(passwd)
       }).fetch();
 
-      if (sails.config.custom.enableBillingFeatures) {
-        let stripeCustomerId = await sails.helpers.stripe.saveBillingInfo.with({
-          emailAddress: newEmail
-        }).timeout(5000).retry();
-        await User.updateOne({id: newUserRecord.id})
-        .set({
-          stripeCustomerId
-        });
-      }
-      this.req.session.userId = newUserRecord.id;
-
-      // In case there was an existing session (e.g. if we allow users to go to the signup page
-      // when they're already logged in), broadcast a message that we can display in other open tabs.
-      if (sails.hooks.sockets) {
-        await sails.helpers.broadcastSessionChange(this.req);
-      }
-
-      return this.res.ok({message: 'New user registered successfully.'});
+      return this.res.ok({message: 'User successfully signed up.'});
     } catch (err) {
       switch (err.code) {
         case 'E_UNIQUE':

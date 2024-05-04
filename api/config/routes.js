@@ -34,5 +34,6 @@ module.exports.routes = {
   ***************************************************************************/
 
   // Auth
-  'POST /api/v1/auth/register': { action: 'auth/register' }
+  'POST /api/v1/auth/register': { action: 'auth/register' },
+  'POST /api/v1/auth/login': { action: 'auth/login' },
 };
