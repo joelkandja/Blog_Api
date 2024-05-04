@@ -10,10 +10,11 @@
     "@sailshq/socket.io-redis": "^6.1.2",
     "db-migrate": "^0.11.14",
     "db-migrate-mysql": "^2.3.2",
-    "grunt": "^1.0.4",
+    "grunt": "^1.6.1",
     "sails": "^1.5.9",
     "sails-grunt-task-db-migrate": "^1.0.2",
     "sails-hook-grunt": "^5.0.0",
+    "sails-hook-organics": "^2.2.2",
     "sails-hook-orm": "^4.0.0",
     "sails-hook-sockets": "^3.0.0",
     "sails-mysql": "^3.0.1"
