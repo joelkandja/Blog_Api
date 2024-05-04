@@ -19,7 +19,7 @@ module.exports = {
     },
     content :{
       type: 'string',
-      required : 'string'
+      required : true
     },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
