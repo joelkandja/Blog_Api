@@ -25,10 +25,10 @@ exports.up = function (db) {
       type: 'string',
       notNull: true,
     },
-    createAt: {
+    createdAt: {
       type: 'datetime',
     },
-    updateAt: {
+    updatedAt: {
       type: 'datetime',
     }
 
