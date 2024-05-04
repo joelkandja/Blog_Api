@@ -47,10 +47,10 @@ exports.up = function (db) {
         }
       }
     },
-    createAt: {
+    createdAt: {
       type: 'datetime',
     },
-    updateAt: {
+    updatedAt: {
       type: 'datetime',
     }
   });
