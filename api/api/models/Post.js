@@ -7,19 +7,19 @@
 
 module.exports = {
 
-  tableName : 'posts',
+  tableName: 'posts',
   attributes: {
 
     name: {
-      type:'string',
-      required : true
+      type: 'string',
+      required: true
     },
-    description:{
+    description: {
       type: 'string',
     },
-    content :{
+    content: {
       type: 'string',
-      required : 'string'
+      required: true
     },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -30,14 +30,14 @@ module.exports = {
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
 
-    comments: {collection:'comment', via:'post'},
+    comments: { collection: 'comment', via: 'post' },
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    categorie:{
-      model : 'categorie',
+    categorie: {
+      model: 'categorie',
       required: true
     }
 
