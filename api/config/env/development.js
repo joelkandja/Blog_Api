@@ -10,17 +10,16 @@
 
 module.exports = {
 
-    // Any configuration settings may be overridden below, whether it's built-in Sails
-    // options or custom configuration specifically for your app (e.g. Stripe, Mailgun, etc.)
-  
-    datastores: {
-  
-      default: {
-        adapter: 'sails-mysql',
-        url: 'mysql://root@localhost:3306/api',
-      },
-  
+  // Any configuration settings may be overridden below, whether it's built-in Sails
+  // options or custom configuration specifically for your app (e.g. Stripe, Mailgun, etc.)
+
+  datastores: {
+
+    default: {
+      adapter: 'sails-mysql',
+      url: 'mysql://root@localhost:3306/api',
     },
-    
-  };
-  
+
+  },
+
+};
