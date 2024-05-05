@@ -1,15 +1,15 @@
 module.exports = {
 
 
-  friendlyName: 'Create category',
+  friendlyName: 'Get category',
 
 
   description: '',
 
 
   inputs: {
-    name: {
-      type: 'string',
+    id: {
+      type: 'number',
       required: true,
     }
   },
@@ -21,32 +21,23 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
-
     let category = {};
-
-
     let res = {
-      'message': 'Object Category : Created ',
+      'message': 'Object Category: Getted',
       data: {},
     };
 
-
-    // sails.log(inputs);
     try {
-
-      category = await Categorie.create(inputs).fetch();
-      sails.log(category)
-
+      category = await Categorie.findOne(inputs);
     } catch (error) {
-      res.message = 'Object Category : Not Created';
-      res.success = false;
+      res.message = 'Object Category: Not getted';
+      res.success = false
     };
 
     if (category)
       res.data = { category }
-
+    // All done.
     return exits.success(res);
-
 
   }
 

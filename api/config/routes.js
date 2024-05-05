@@ -35,5 +35,7 @@ module.exports.routes = {
 
   'POST /api/v1/categories/create-category': { action: 'categories/create-category' },
   'GET /api/v1/categories/get-categories': { action: 'categories/get-categories' },
+  'GET /api/v1/categories/get-category': { action: 'categories/get-category' },
+  'PATCH /api/v1/categories/update-category': { action: 'categories/update-category' },
 
 };

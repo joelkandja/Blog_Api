@@ -17,10 +17,24 @@ module.exports = {
   },
 
 
-  fn: async function (inputs) {
+  fn: async function (inputs, exits) {
+    let categories = []
+    let res = {
+      'message': 'Object Category : Created',
+      data: {},
+    }
 
+    try {
+      categories = await Categorie.find();
+
+    } catch (error) {
+      res.message = 'Object Category: Not Created';
+      res.success = false;
+    }
+    if (categories)
+      res.data = { categories }
     // All done.
-    return;
+    return exits.success(res);
 
   }
 
