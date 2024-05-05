@@ -33,6 +33,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+
   // URL FEATURES CATEGORIES
 
   'POST /api/v1/categories/create-category': { action: 'categories/create-category' },
@@ -46,5 +47,10 @@ module.exports.routes = {
   'GET /api/v1/posts/get-post': { action: 'posts/get-post' },
   'GET /api/v1/posts/get-posts': { action: 'posts/get-posts' },
   'PATCH /api/v1/posts/update-post': { action: 'posts/update-post' },
+
+
+  // Auth
+  'POST /api/v1/auth/register': { action: 'auth/register' },
+  'POST /api/v1/auth/login': { action: 'auth/login' },
 
 };
