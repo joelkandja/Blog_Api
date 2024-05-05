@@ -53,4 +53,12 @@ module.exports.routes = {
   'POST /api/v1/auth/register': { action: 'auth/register' },
   'POST /api/v1/auth/login': { action: 'auth/login' },
 
+
+
+  //comment
+  'POST /api/v1/comments/create-comment': { action: 'comments/create-comment' },
+  'GET /api/v1/comments/get-comment': { action: 'comments/get-comment' },
+  'GET /api/v1/comments/get-comments': { action: 'comments/get-comments' },
+  'PATCH /api/v1/comments/update-comment': { action: 'comments/update-comment' },
+
 };
