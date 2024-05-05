@@ -25,7 +25,7 @@ module.exports = {
     }
 
     try {
-      posts = await Post.find()
+      posts = await Post.find().populate('category');
     } catch (error) {
       res.message = 'Object POSTS: Not Received';
       res.success = false;

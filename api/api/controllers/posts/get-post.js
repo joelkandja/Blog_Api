@@ -29,7 +29,7 @@ module.exports = {
     };
 
     try {
-      post = await Post.findOne(inputs)
+      post = await Post.findOne(inputs).populate('category')
 
     } catch (error) {
       res.message = 'Object POST: Not Received';
