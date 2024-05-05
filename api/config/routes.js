@@ -33,9 +33,18 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  // URL FEATURES CATEGORIES
+
   'POST /api/v1/categories/create-category': { action: 'categories/create-category' },
   'GET /api/v1/categories/get-categories': { action: 'categories/get-categories' },
   'GET /api/v1/categories/get-category': { action: 'categories/get-category' },
   'PATCH /api/v1/categories/update-category': { action: 'categories/update-category' },
+
+  // URL FEATURES POSTS
+
+  'POST /api/v1/posts/create-post': { action: 'posts/create-post' },
+  'GET /api/v1/posts/get-post': { action: 'posts/get-post' },
+  'GET /api/v1/posts/get-posts': { action: 'posts/get-posts' },
+  'PATCH /api/v1/posts/update-post': { action: 'posts/update-post' },
 
 };

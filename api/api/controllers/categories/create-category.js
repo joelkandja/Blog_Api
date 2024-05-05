@@ -35,7 +35,7 @@ module.exports = {
     try {
 
       category = await Categorie.create(inputs).fetch();
-      sails.log(category)
+
 
     } catch (error) {
       res.message = 'Object Category : Not Created';
