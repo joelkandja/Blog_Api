@@ -39,7 +39,8 @@ module.exports = {
         passwd: await sails.helpers.passwords.hashPassword(passwd)
       }).fetch();
 
-      return this.res.ok({message: 'User successfully signed up.'});
+      let message = 'User successfully signed up.';
+      return this.res.ok({message:message, newUserRecord: newUserRecord});
     } catch (err) {
       switch (err.code) {
         case 'E_UNIQUE':
